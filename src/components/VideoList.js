@@ -6,6 +6,7 @@ const VideoList = (props) => {
   const videoItems = props.videos.map(video =>
     (
       <VideoListItem
+        onVideoSelect={props.onVideoSelect}
         video={video}
         key={video.etag}
       />
@@ -21,6 +22,7 @@ const VideoList = (props) => {
 
 VideoList.propTypes = {
   videos: PropTypes.array,
+  onVideoSelect: PropTypes.func.isRequired,
 };
 
 VideoList.defaultProps = {
